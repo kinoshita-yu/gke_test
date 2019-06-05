@@ -1,0 +1,19 @@
+
+<table border="1" cellspacing="0" cellpadding="5" bordercolor="#777777">
+  <% @messages.each do |message|%>
+    <tr>
+      <td><label class="pull-left"><%= message.display_message %></label></td>
+      <td><%= button_to '削除', index_destroy_hello_dockers_path( message.id), method: :delete%></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<hr>
+
+<%= form_with(url: index_add_hello_dockers_path) do |form| %>
+
+  <%= form.text_field :display_message %>
+  <%= form.submit "追加" %>
+
+<% end %>

@@ -1,0 +1,50 @@
+version: '3'
+volumes:
+  unuse:
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql_2
+      - ./mysql_conf/:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: testtest
+      TZ: "Asia/Tokyo"
+  web: &app_base
+    env_file: .env
+    image: ${WEB_IMAGE:-docker_test/docker_test:latest}
+    build: .
+    ports:
+      - "127.0.0.1:3001:3000"
+    depends_on:
+      - db
+    volumes:
+      - .:/docker_test
+      - unuse:/docker_test/node_modules
+    environment:
+      APP_DATABASE_USER: root
+      APP_DATABASE_PASSWORD: testtest
+      APP_DATABASE_HOST: db
+      APP_DATABASE_NAME: docker_test
+      USERNAME: 'test'
+    command: /bin/sh -c 'rm -f /docker_test/tmp/pids/server.pid && rails s -p 3000 -b 0.0.0.0'
+  spring:
+    <<: *app_base
+    ports: []
+    command: spring server
+    stdin_open: true
+    tty: true
+    pid: host
+    environment:
+      SPRING_SOCKET: /tmp/spring/spring.sock
+    volumes:
+      - .:/docker_test
+      - ./spring:/tmp/spring
+      - unuse:/docker_test/node_modules
+    environment:
+      APP_DATABASE_USER: root
+      APP_DATABASE_PASSWORD: testtest
+      APP_DATABASE_HOST: db
+      APP_DATABASE_NAME: docker_test

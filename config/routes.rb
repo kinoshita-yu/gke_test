@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  #
-  #
-  resources :hello_docker, only: [:index]
+  root controller: :hello_dockers, action: :index
+
+  resources :hello_dockers do
+    collection do
+      post "index_add"
+      delete "index_destroy"
+    end
+  end
+
+
 end
