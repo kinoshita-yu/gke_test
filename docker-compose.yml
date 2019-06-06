@@ -8,7 +8,15 @@ services:
     build: .
     ports:
       - "3000:3000"
+    logging:
+      driver: "awslogs"
+      options:
+        awslogs-region: "ap-northeast-1"
+        awslogs-group: "develop"
+        awslogs-stream: "docker_test"
     environment:
+      RAILS_ENV: production
+      RAILS_LOG_TO_STDOUT: true
       APP_DATABASE_USER: docker_test
       APP_DATABASE_PASSWORD: testtest
       APP_DATABASE_HOST: docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com
@@ -21,6 +29,12 @@ services:
     stdin_open: true
     tty: true
     pid: host
+    logging:
+      driver: "awslogs"
+      options:
+        awslogs-region: "ap-northeast-1"
+        awslogs-group: "develop"
+        awslogs-stream: "spring"
     environment:
       SPRING_SOCKET: /tmp/spring/spring.sock
       APP_DATABASE_USER: docker_test
