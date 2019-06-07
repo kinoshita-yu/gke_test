@@ -13,10 +13,10 @@ services:
       options:
         awslogs-region: "ap-northeast-1"
         awslogs-group: "develop"
-        awslogs-stream: "docker_test"
+        awslogs-stream-prefix: "docker-test"
     environment:
       RAILS_ENV: production
-      RAILS_LOG_TO_STDOUT: true
+      RAILS_LOG_TO_STDOUT: "ON"
       APP_DATABASE_USER: docker_test
       APP_DATABASE_PASSWORD: testtest
       APP_DATABASE_HOST: docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com
@@ -34,7 +34,7 @@ services:
       options:
         awslogs-region: "ap-northeast-1"
         awslogs-group: "develop"
-        awslogs-stream: "spring"
+        awslogs-stream-prefix: "spring"
     environment:
       SPRING_SOCKET: /tmp/spring/spring.sock
       APP_DATABASE_USER: docker_test

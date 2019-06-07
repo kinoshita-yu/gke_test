@@ -39,7 +39,7 @@ npm install yarn -g && \
 cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
 yarn install && \
 gem install bundler -v 2.0.1 && \
-bundle install -j4  --path vendor/bundle && \
+bundle install -j4 && \
 apk del .build-dependencies
 
 RUN yarn install --pure-lockfile --ignore-engines \
