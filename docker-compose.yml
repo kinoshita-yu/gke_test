@@ -2,7 +2,7 @@ version: '3'
 volumes:
   unuse:
 services:
-  web: &app_base
+  docker-test: &app_base
     env_file: .env
     image: 709358053306.dkr.ecr.ap-northeast-1.amazonaws.com/docker_test:latest
     build: .
