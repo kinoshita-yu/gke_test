@@ -1,5 +1,20 @@
 version: '3'
 services:
   web:
+    logging:
+      driver: "awslogs"
+      options:
+        awslogs-region: "ap-northeast-1"
+        awslogs-group: "develop"
+        awslogs-stream-prefix: "docker-test"
+    environment:
+      RAILS_SERVE_STATIC_FILES: 1
+      RAILS_MASTER_KEY: 910ba316a6467ce69af7110f966e610d
+      RAILS_ENV: production
+      RAILS_LOG_TO_STDOUT: "ON"
+      APP_DATABASE_USER: docker_test
+      APP_DATABASE_PASSWORD: testtest
+      APP_DATABASE_HOST: docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com
+      APP_DATABASE_NAME: docker_test
     image: 709358053306.dkr.ecr.ap-northeast-1.amazonaws.com/docker_test:latest
     command: ["/bin/sh", "-c", "rake db:migrate"]
