@@ -15,6 +15,7 @@ services:
         awslogs-group: "develop"
         awslogs-stream-prefix: "docker-test"
     environment:
+      RAILS_SERVE_STATIC_FILES: 1
       RAILS_MASTER_KEY: 910ba316a6467ce69af7110f966e610d
       RAILS_ENV: production
       RAILS_LOG_TO_STDOUT: "ON"
