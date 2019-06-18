@@ -3,7 +3,7 @@ task_definition:
   task_execution_role: ecsTaskExecutionRole
   ecs_network_mode: awsvpc
   task_size:
-    mem_limit: 1GB
+    mem_limit: 0.5GB
     cpu_limit: 512
 run_params:
   network_configuration:
