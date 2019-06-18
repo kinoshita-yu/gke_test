@@ -1,0 +1,22 @@
+{
+  "executionRoleArn": "arn:aws:iam::709358053306:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "docker-test",
+      "image": "<IMAGE1_NAME>",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "512",
+  "memory": "1024",
+  "family": "docker-test"
+}
