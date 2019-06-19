@@ -4,12 +4,6 @@
     {
       "name": "docker-test",
       "image": "<IMAGE1_NAME>",
-      "logConfiguration":{
-          "driver": "awslogs",
-          "options":{
-          "awslogs-region": "ap-northeast-1",
-          "awslogs-group": "develop",
-          "awslogs-stream-prefix": "docker-test"}},
       "environment":{
           "RAILS_MASTER_KEY": "910ba316a6467ce69af7110f966e610d",
           "RAILS_SERVE_STATIC_FILES": "true",
@@ -32,12 +26,6 @@
     {
       "name": "spring",
       "image": "<IMAGE1_NAME>",
-      "logConfiguration":{
-        "driver": "awslogs",
-        "options":{
-          "awslogs-region": "ap-northeast-1",
-          "awslogs-group": "develop",
-          "awslogs-stream-prefix": "docker-test"}},
       "environment":{
         "SPRING_SOCKET": "/tmp/spring/spring.sock",
         "APP_DATABASE_USER": "docker_test",
