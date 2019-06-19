@@ -39,6 +39,15 @@
         }
       ],
       "command": ["/bin/sh", "-c", "rm -f /docker_test/tmp/pids/server.pid && rails s -p 3000 -b 0.0.0.0 && rails assets:precompile"],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "develop",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "docker-test"
+        }
+      },
       "portMappings": [
         {
           "containerPort": 3000,
@@ -51,6 +60,19 @@
     {
       "name": "spring",
       "image": "<IMAGE1_NAME>",
+      "command": [
+        "spring",
+        "server"
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "develop",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "spring"
+        }
+      },
       "environment": [
         {
           "name": "APP_DATABASE_HOST",
