@@ -4,15 +4,6 @@
     {
       "name": "docker-test",
       "image": "<IMAGE1_NAME>",
-      "environment":{
-          "RAILS_MASTER_KEY": "910ba316a6467ce69af7110f966e610d",
-          "RAILS_SERVE_STATIC_FILES": "true",
-          "RAILS_ENV": "production",
-          "RAILS_LOG_TO_STDOUT": "ON",
-          "APP_DATABASE_USER": "docker_test",
-          "APP_DATABASE_PASSWORD": "testtest",
-          "APP_DATABASE_HOST": "docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com",
-          "APP_DATABASE_NAME": "docker_test"},
       "command": ["/bin/sh", "-c", "rm -f /docker_test/tmp/pids/server.pid && rails s -p 3000 -b 0.0.0.0 && rails assets:precompile"],
       "portMappings": [
         {
@@ -26,12 +17,6 @@
     {
       "name": "spring",
       "image": "<IMAGE1_NAME>",
-      "environment":{
-        "SPRING_SOCKET": "/tmp/spring/spring.sock",
-        "APP_DATABASE_USER": "docker_test",
-        "APP_DATABASE_PASSWORD": "testtest",
-        "APP_DATABASE_HOST": "docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com",
-        "APP_DATABASE_NAME": "docker_test"},
       "essential": true
     }
   ],
