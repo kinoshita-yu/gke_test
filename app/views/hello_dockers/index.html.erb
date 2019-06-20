@@ -4,7 +4,7 @@
   <% @messages.each do |message|%>
     <tr>
       <td><label class="pull-left"><%= message.display_message %></label></td>
-      <td><%= button_to '削除', index_destroy_hello_dockers_path( message.id), method: :delete, class: "btn btn-primary"%></td>
+      <td><%= button_to '削除', index_destroy_hello_dockers_path( message.id), method: :delete, class: "btn btn-danger"%></td>
     </tr>
   <% end %>
 
@@ -20,7 +20,7 @@
   <%= form.text_field :display_message %>
       </div>
         <div class="col-2">
-  <%= form.submit "追加", class: "btn btn-secondary"%>
+  <%= form.submit "追加", class: "btn btn-warning"%>
         </div>
     </div>
 
