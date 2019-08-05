@@ -6,7 +6,6 @@ FROM ruby:2.5.3-alpine
 RUN apk add --no-cache ca-certificates
 COPY --from=build-env /go/bin/env-injector /usr/local/bin/
 ENTRYPOINT ["env-injector"]
-ENV APP_DATABASE_NAME=
 
 CMD ["printenv"]
 

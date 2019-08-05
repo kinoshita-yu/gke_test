@@ -18,6 +18,10 @@
           "value": "testtest"
         },
         {
+          "name": "APP_DATABASE_NAME",
+          "value": "test"
+        },
+        {
           "name": "APP_DATABASE_USER",
           "value": "docker_test"
         },
