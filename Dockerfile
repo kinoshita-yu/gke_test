@@ -1,4 +1,14 @@
+FROM golang AS build-env
+RUN CGO_ENABLED=0 go get github.com/okzk/env-injector
+
 FROM ruby:2.5.3-alpine
+
+RUN apk add --no-cache ca-certificates
+COPY --from=build-env /go/bin/env-injector /usr/local/bin/
+ENTRYPOINT ["env-injector"]
+ENV APP_DATABASE_NAME=
+
+CMD ["printenv"]
 
 ENV APP_ROOT /docker_test
 
