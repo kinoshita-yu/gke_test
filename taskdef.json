@@ -42,7 +42,7 @@
           "value": "true"
         }
       ],
-      "command": ["/bin/sh", "-c", "rm -f /docker_test/tmp/pids/server.pid && rails s -p 3000 -b 0.0.0.0 && rails assets:precompile"],
+      "command": ["/bin/sh", "-c", "rm -f /docker_test/tmp/pids/server.pid && rails s -p 3000 -b 0.0.0.0 && rails assets:precompile && env-injector env"],
       "logConfiguration": {
         "logDriver": "awslogs",
         "secretOptions": null,
