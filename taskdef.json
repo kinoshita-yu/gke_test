@@ -35,7 +35,7 @@
         }
       ],
       "command": ["/bin/sh", "-c", "rm -f /docker_test/tmp/pids/server.pid && rails s -p 3000 -b 0.0.0.0 && rails assets:precompile"],
-      "entrypoint:": ["-e", "ENV_INJECTOR_PREFIX=container.prod"],
+      "entryPoint:": ["-e", "ENV_INJECTOR_PREFIX=container.prod"],
       "logConfiguration": {
         "logDriver": "awslogs",
         "secretOptions": null,
