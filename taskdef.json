@@ -19,7 +19,7 @@
         },
         {
           "name": "APP_DATABASE_NAME",
-          "value": "test"
+          "value": ""
         },
         {
           "name": "APP_DATABASE_USER",
