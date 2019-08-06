@@ -7,7 +7,7 @@ RUN apk add --no-cache ca-certificates
 COPY --from=build-env /go/bin/env-injector /usr/local/bin/
 
 
-ENV ENV_INJECTOR_PREFIX=/container/prod
+ENV ENV_INJECTOR_CONFIG=/container/prod
 
 ENTRYPOINT ["env-injector"]
 
