@@ -15,6 +15,7 @@ services:
       APP_DATABASE_USER: docker_test
       APP_DATABASE_PASSWORD: testtest
       APP_DATABASE_HOST: docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com
-      APP_DATABASE_NAME: docker_test
+      APP_DATABASE_NAME:
+      ENV_INJECTOR_PATH: /container/prod
     image: 709358053306.dkr.ecr.ap-northeast-1.amazonaws.com/docker_test:latest
-    command: ["/bin/sh", "-c", "rake db:migrate"]
+    command: ["/bin/sh", "-c", "rake db:migrate && env-injector && printenv"]
