@@ -6,7 +6,7 @@
       "image": "<IMAGE1_NAME>",
       "environment": [
         {
-          "name": "ENV_INJECTOR_CONFIG",
+          "name": "ENV_INJECTOR_PATH",
           "value": "/container/prod"
         },
         {
