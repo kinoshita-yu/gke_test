@@ -7,9 +7,11 @@ RUN apk add --no-cache ca-certificates
 COPY --from=build-env /go/bin/env-injector /usr/local/bin/
 
 
-ENV ENV_INJECTOR_PREFIX=/container/prod APP_DATABASE_NAME=
+ENV ENV_INJECTOR_PREFIX=/container/prod
 
 ENTRYPOINT ["env-injector"]
+
+ENV APP_DATABASE_NAME=
 
 CMD ["printenv"]
 
