@@ -14,7 +14,7 @@ services:
       RAILS_LOG_TO_STDOUT: "ON"
       APP_DATABASE_USER:
       APP_DATABASE_PASSWORD: testtest
-      APP_DATABASE_HOST: docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com
+      APP_DATABASE_HOST:
       APP_DATABASE_NAME:
       ENV_INJECTOR_PATH: /container/prod
       ENV_INJECTOR_VERBOSE: 1

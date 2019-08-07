@@ -11,10 +11,6 @@
           "value": "/container/prod"
         },
         {
-          "name": "APP_DATABASE_HOST",
-          "value": ""
-        },
-        {
           "name": "APP_DATABASE_PASSWORD",
           "value": "testtest"
         },
