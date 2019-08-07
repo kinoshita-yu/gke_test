@@ -3,7 +3,7 @@ class HelloDockersController < ApplicationController
   def index
     @messages = Message.all
 
-    @test = ENV['APP_DATABASE_NAME']
+    @test = ENV['APP_DATABASE_HOST']
 
   end
 

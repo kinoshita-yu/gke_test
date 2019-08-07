@@ -12,7 +12,7 @@
         },
         {
           "name": "APP_DATABASE_HOST",
-          "value": "docker-test.c5xfubdjquij.ap-northeast-1.rds.amazonaws.com"
+          "value": ""
         },
         {
           "name": "APP_DATABASE_PASSWORD",
