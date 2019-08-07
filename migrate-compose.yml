@@ -19,4 +19,4 @@ services:
       ENV_INJECTOR_PATH: /container/prod
       ENV_INJECTOR_VERBOSE: 1
     image: 709358053306.dkr.ecr.ap-northeast-1.amazonaws.com/docker_test:latest
-    command: ["/bin/sh", "-c", "rake db:migrate && env-injector && printenv"]
+    command: ["/bin/sh", "-c", "rake db:migrate && env-injector env && printenv"]
