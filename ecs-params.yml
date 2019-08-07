@@ -1,6 +1,6 @@
 version: 1
 task_definition:
-  task_role: ecsTaskExecutionRole
+  task_role_arn: ecsTaskExecutionRole
   task_execution_role: ecsTaskExecutionRole
   ecs_network_mode: awsvpc
   task_size:
