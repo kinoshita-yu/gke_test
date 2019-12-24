@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cb-sample-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: cb-sample-server
+  template:
+    metadata:
+      labels:
+        name: cb-sample-server
+        cluster_name: cb-sample-server
+    spec:
+      containers:
+        - name: cb-sample-server
+          image: gcr.io/プロジェクト名設定/cb-sample-server:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+  revisionHistoryLimit: 100

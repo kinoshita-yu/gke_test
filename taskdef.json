@@ -15,14 +15,6 @@
           "value": "testtest"
         },
         {
-          "name": "APP_DATABASE_NAME",
-          "value": ""
-        },
-        {
-          "name": "APP_DATABASE_USER",
-          "value": ""
-        },
-        {
           "name": "RAILS_ENV",
           "value": "production"
         },
